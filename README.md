@@ -5,27 +5,39 @@
 [![Build Status][travis-image]][travis-url]
 [![Downloads Stats][npm-downloads]][npm-url]
 
-One to two paragraph statement about your product and what it does.
+
+Presentation is built on React Spectacle.
+
+The Spectacle core API is available in the [Spectacle Docs](https://github.com/FormidableLabs/spectacle/blob/master/README.md).
 
 ![](header.jpg)
 
+## Contents
+
+- [Installation](#installation)
+- [Build & Deployment](#getting-started)
+- [Tutorial](#tutorial)
+- [Build & Deployment](#build-deployment)
+
 ## Installation
+Install dependencies and start the webpack server. The server will run at [`localhost:3000`](http://localhost:3000).
 
 ```sh
-npm install
+yarn install
+yarn start
 ```
 
-## Usage example
+## Build & Deployment
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+Building the dist version of the project is as easy as running
+```sh
+yarn build
+```
 
-_For more examples and usage, please refer to the [Wiki][wiki]._
-
-## Development setup
+If you want to deploy the slideshow to surge, run
 
 ```sh
-npm install
-npm start
+yarn deploy
 ```
 
 ## Release History
@@ -34,11 +46,11 @@ npm start
 
 ## Meta
 
-Your Name – [@YourTwitter](https://twitter.com/dbader_org) – YourEmail@example.com
+Dawid Janiga – [@dawidjaniga](https://twitter.com/dawidjaniga) – dawidjaniga@gmail.com
 
-Distributed under the XYZ license. See ``LICENSE`` for more information.
+Distributed under the MIT license. See ``LICENSE`` for more information.
 
-[https://github.com/yourname/github-link](https://github.com/dbader/)
+[https://github.com/hevelius/](https://github.com/hevelius/)
 
 ## Contributing
 
