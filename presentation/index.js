@@ -13,7 +13,13 @@ import {
   Notes,
   Quote,
   Slide,
-  Text
+  Text,
+  Appear,
+  Table,
+  TableRow,
+  TableHeader,
+  TableHeaderItem,
+  TableItem,
 } from 'spectacle';
 
 // Import theme
@@ -61,8 +67,12 @@ export default class Presentation extends React.Component {
           <Heading size={2} textColor="secondary">
             Czym jest WebVR?
           </Heading>
-          <Text textColor="primary">Biblioteką do tworzenie wirtualnej rzeczywiście w przeglądarce.</Text>
-          <Text textColor="primary">Działa na HTC Vive, Oculus Rift i przeglądrakch mobilnych (Android, iOS)</Text>
+          <Appear>
+            <Text textColor="primary">Biblioteką do tworzenie wirtualnej rzeczywiście w przeglądarce.</Text>
+          </Appear>
+          <Appear>
+            <Text textColor="primary">Działa na HTC Vive, Oculus Rift i przeglądrakch mobilnych (Android, iOS)</Text>
+          </Appear>
         </Slide>
         <Slide transition={['fade']} bgColor="secondary" textColor="primary">
           <List>
@@ -73,8 +83,21 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide>
-          <Image src={images.goodWork} width={500} />
-          <Notes>gifs work too</Notes>
+          <Heading size={2}>Wsparcie</Heading>
+          <Table>
+            <TableRow>
+              <TableHeaderItem />
+              <TableHeaderItem>2011</TableHeaderItem>
+            </TableRow>
+            <TableRow>
+              <TableItem>None</TableItem>
+              <TableItem>61.8%</TableItem>
+            </TableRow>
+            <TableRow>
+              <TableItem>jQuery</TableItem>
+              <TableItem>28.3%</TableItem>
+            </TableRow>
+          </Table>
         </Slide>
       </Deck>
     );
