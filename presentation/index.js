@@ -7,6 +7,7 @@ import {
   Image
 } from 'spectacle'
 import styled from 'styled-components'
+import Magnifier from 'react-magnifier'
 
 import Avatar from './components/avatar'
 import Heading from './components/heading'
@@ -21,12 +22,26 @@ import theme from './theme'
 const images = {
   meetupLogo: require('../assets/3cityvr-logo.png'),
   avatar: require('../assets/red-shirt-400.jpg'),
+  twitter: require('../assets/twitter.png'),
+  modules: require('../assets/modules.png'),
   support: require('../assets/support.png'),
   browserDevices: require('../assets/browser-devices.png'),
   developersStatistics: require('../assets/developers-statistics.png'),
   // history: require('../assets/history.png'),
   immersiveSpectrum: require('../assets/immersive-spectrum.png'),
-  webvrSchema: require('../assets/webvr-schema.png')
+  mozillaStoreXR: require('../assets/mozilla-store-xr-2.gif'),
+  openXRbefore: require('../assets/20108-openxr-market-before.jpg'),
+  openXRafter: require('../assets/20108-openxr-market-after.jpg'),
+  openXRcompanies: require('../assets/2016-vr-graphic-1_6.jpg'),
+  webvrSchema: require('../assets/webvr-schema.png'),
+  aleksiej: require('../assets/aleksiej-leonow.png'),
+  webxrExplain: require('../assets/webxr-explain.png')
+}
+
+const videos = {
+  vrForEveryone: 'vr-for-everyone.mp4',
+  gamepadApi: 'large/gamepad-api.mp4',
+  easyCollaboration: 'large/easy-collaboration.mp4'
 }
 
 // Require CSS
@@ -36,6 +51,15 @@ const BackgroundVideo = styled(Video)`
 position: fixed;
 opacity: 0.5;
 width: 100%
+`
+
+const InlineImage = styled(Image)`
+&& {
+  display: inline-block;
+  height: 1em;
+  margin: 0;
+  vertical-align: middle;
+}
 `
 
 const Flex = styled.div`
@@ -111,7 +135,7 @@ export default class Presentation extends React.Component {
       <React.Fragment>
         <Main>
           <Deck
-            transition={['spin', 'zoom', 'slide', 'fade']}
+            transition={['zoom', 'slide', 'fade']}
             transitionDuration={300}
             progress='bar'
             theme={theme()}
@@ -127,6 +151,7 @@ export default class Presentation extends React.Component {
                 Wprowadzenie <Prefix>//</Prefix> Status <Prefix>//</Prefix> Przykłady
               </Heading>
               <Avatar src={images.avatar} name='Dawid Janiga' width='200px' />
+              <sup>8976</sup>
             </Slide>
             <Slide>
               <Heading size={2}>
@@ -147,7 +172,7 @@ export default class Presentation extends React.Component {
                 {/* <ListItem>[mapa myśli z całej prezentacji]</ListItem> */}
               </List>
             </Slide>
-            <Slide>
+            <Slide transition={['slide', 'fade']}>
               <Heading size={2}>
                 Czym jest WebVR?
               </Heading>
@@ -172,7 +197,6 @@ export default class Presentation extends React.Component {
               <Heading size={2}>
                 Historia
               </Heading>
-              {/* <Image fit src={images.history} /> */}
               <List>
                 <Appear>
                   <div>
@@ -204,40 +228,30 @@ export default class Presentation extends React.Component {
                 </Appear>
               </List>
             </Slide>
-            <Slide>
+            <Slide transition={['slide']}>
               <Heading size={2}>
-                Kwestia nazewnictwa WebXR
+                WebVR i WebGL
+              </Heading>
+              <Magnifier src={images.webvrSchema} zoomFactor={0.5} width='50%' mgWidth={400} mgHeight={400} />
+            </Slide>
+            <Slide transition={['slide']}>
+              <Heading size={2}>
+                Dotychczas
               </Heading>
               <Image fit src={images.immersiveSpectrum} />
-              <List>
-                <Appear>
-                  <div>
-                    <ListItem>
-                    Web<RedText>X</RedText>R = Web(<RedText>V</RedText>R + Web<RedText>A</RedText>R + <RedText>M</RedText>R)
-                    </ListItem>
-                  </div>
-                </Appear>
-                <Appear>
-                  <div>
-                    <ListItem>
-                    dodaje AR, poprawia wydajność, wprowadza zmiany zaproponowane przez społeczność
-                    </ListItem>
-                  </div>
-                </Appear>
-                <Appear>
-                  <div>
-                    <ListItem>
-                    i jest eksperymentalne 🔥
-                    </ListItem>
-                  </div>
-                </Appear>
-              </List>
             </Slide>
+            <Slide transition={['slide']}>
+              <Heading size={2}>
+              Geneza
+              </Heading>
+              <Image fit src={images.webxrExplain} />
+            </Slide>
+
             <Slide>
               <Heading size={2}>
               Intro
               </Heading>
-              <Video height='100%' src='vr-for-everyone.mp4' controls autoPlay={false} muted={false} subtitles={[{
+              <Video height='100%' src={videos.vrForEveryone} controls autoPlay={false} muted={false} subtitles={[{
                 label: 'Polski',
                 lang: 'pl',
                 isDefault: true,
@@ -256,6 +270,12 @@ export default class Presentation extends React.Component {
             </Slide>
             <Slide>
               <Heading size={2}>
+              Współpraca niezależnie od urządzeń
+              </Heading>
+              <Video height='100%' src={videos.easyCollaboration} controls autoPlay={false} muted={false} />
+            </Slide>
+            <Slide>
+              <Heading size={2}>
               Za co jest odpowiedzialny WebVR?
               </Heading>
               <List>
@@ -264,34 +284,21 @@ export default class Presentation extends React.Component {
                 <ListItem>Synchronizacje położenia i pozycji</ListItem>
               </List>
             </Slide>
-            <Slide>
-              <Heading size={2}>
-              Schemat działania
-              </Heading>
-              <Image fit src={images.webvrSchema} width='50%' />
-            </Slide>
-            {/* <Slide>
-              <Heading size={2}>
-              Jak tym sterować?
-              </Heading>
-              Gamepad API
-              [video z przykladme z Playstation]
-            </Slide> */}
             <Slide transition={['slide']}>
               <Heading size={2}>
               Wsparcie WebVR
               </Heading>
-              <Image fit src={images.support} />
+              <Magnifier src={images.support} zoomFactor={0.7} mgWidth={400} mgHeight={400} />
               <Source><Link href='https://caniuse.com/#feat=webvr' /></Source>
             </Slide>
             <Slide transition={['slide']}>
               <Heading size={2}>
               Wsparcie WebVR
               </Heading>
-              <Image fit src={images.browserDevices} width='50%' />
+              <Magnifier src={images.browserDevices} zoomFactor={0.5} width='50%' mgWidth={400} mgHeight={400} />
               <Source><Link href='https://blog.mozvr.com/progressive-webxr-ar-store' /></Source>
             </Slide>
-            <Slide transition={['slide']}>
+            <Slide transition={['zoom']}>
               <Heading size={2}>
               Wsparcie WebVR - dokładny opis
               </Heading>
@@ -300,11 +307,11 @@ export default class Presentation extends React.Component {
                 <ListItem><Link href='https://aframe.io/docs/0.9.0/introduction/vr-headsets-and-webvr-browsers.html' /></ListItem>
               </List>
             </Slide>
-            <Slide transition={['slide']}>
+            <Slide transition={['fade', 'zoom']}>
               <Heading size={2}>WebVR Polyfill</Heading>
               <List>
                 <ListItem>Polyfill - proteza dla przeglądarek bez wbudowanej funkcjonalności</ListItem>
-                <ListItem>✅&nbsp;&nbsp;&nbsp;prawie 100% wsparcie przeglądarek</ListItem>
+                <ListItem>✅&nbsp;&nbsp;&nbsp;prawie 100% wsparcie</ListItem>
                 <ListItem>❌&nbsp;&nbsp;&nbsp;doświadczenie może nie być płynne</ListItem>
                 <ListItem>
                   <Link href='https://github.com/immersive-web/webvr-polyfill' />
@@ -316,60 +323,104 @@ export default class Presentation extends React.Component {
               Dlaczego VR w Webie?
               </Heading>
               <List>
-                <ListItem>3.5 mld użytkowników na całym świecie</ListItem>
-
-                <ListItem>JavaScript najpopularniejszym językiem programowania</ListItem>
+                <ListItem>Internet 3.5 mld użytkowników na całym świecie</ListItem>
+                <ListItem>Szybki rozówj technologii internetowych</ListItem>
+                <ListItem>Gamepad API, Bluetooth, USB, RealTime Communication etc.</ListItem>
               </List>
+              <Button href='https://whatwebcando.today/'>Więcej informacji</Button>
+            </Slide>
+            <Slide>
+              <Heading size={2}>
+              Moduły języków programowania
+              </Heading>
+              <Magnifier src={images.modules} zoomFactor={0.5} width='45%' mgWidth={400} mgHeight={400} />
+              <Source><Link href='http://www.modulecounts.com/' /></Source>
+            </Slide>
+            <Slide>
+              <Heading size={2}>
+              Gamepad API
+              </Heading>
+              <Video height='100%' src={videos.gamepadApi} controls autoPlay={false} muted />
             </Slide>
             <Slide>
               <Heading size={2}>
               StackOverflow 2018 Developer Survey
               </Heading>
-              <Image fit src={images.developersStatistics} width='45%' />
+              <Magnifier src={images.developersStatistics} zoomFactor={0.5} width='45%' mgWidth={400} mgHeight={400} />
               <Source><Link href='https://insights.stackoverflow.com/survey/2018/#most-popular-technologies'>StackOverflow 2018 Developer Survey</Link></Source>
             </Slide>
-            <Slide>
+            <Slide id='inspiracje'>
               <Heading size={2}>
-              Użycie przeglądarek na świecie
+              Inspiracje
               </Heading>
-              [wykres pokazujący użycie z ostatniego roku]
+            </Slide>
+            <Slide id='aleksiej'>
+              <Heading size={2}>
+              Aleksiej Leonow
+              </Heading>
+              <Image fit src={images.aleksiej} width='60%' />
+              <Button href='https://pl.wikipedia.org/wiki/Aleksiej_Leonow'>Przeczytaj na Wikipedii</Button>
             </Slide>
             <Slide>
               <Heading size={2}>
-              Ilość kupionych urządzeń do VR
+              Pierwszy spacer człowieka w kosmosie
               </Heading>
-              [wykres pokazujacy sprzedaż z ostatnich 3 lat]
+              <iframe width='1080px' height='540px' frameborder='0' allowfullscreen='allowfullscreen' allowvr='' allow='vr; fullscreen; autoplay; accelerometer; gyroscope' src='https://player.with.in/?internal=true&amp;id=CXNVIMA&amp;autoplay=false' data-v-38b1ecb5='' />
             </Slide>
             <Slide>
               <Heading size={2}>
-              Do czego można użyć WebVR?
+              Wady ❌
               </Heading>
-              <List>
-                <ListItem>Medycyna</ListItem>
-                <ListItem>Edukacja</ListItem>
-                <ListItem>Architektura i nieruchomości</ListItem>
-                <ListItem>Sztuka</ListItem>
-                <ListItem>Marketing</ListItem>
-                <ListItem>Turystyka</ListItem>
-                <ListItem>Rozrywka</ListItem>
-                <ListItem>Projektowanie i inżynieria</ListItem>
-              </List>
-              <Text>Gdzie koszty błędy lub organizacji szkolenia są wysokie</Text>
-            </Slide>
-            <Slide>
-              <Heading size={2}>
-              Przykłady Wideo
-              </Heading>
-              [video na podstawie slajdu “Do czego można użyć WebVR?]
+              <Appear>
+                <div>
+                  <List>
+                    <ListItem>Eksperymentalne stadium rozwoju</ListItem>
+                    <ListItem>Wydajność</ListItem>
+                  </List>
+                </div>
+              </Appear>
             </Slide>
             <Slide>
               <Heading size={2}>
               Przyszłość - co dalej?
               </Heading>
               <List>
-                <ListItem>WebVR - Aktualne komentarze gigantów, statystyki?</ListItem>
-                <ListItem>3CityVR - jeżeli będzie zainteresowanie - prezentacja WebXR, przedstawienie w szczegółach jak zbudowana jest Mapa Wikipedii</ListItem>
+                <ListItem>Progressive WebXR</ListItem>
+                <ListItem><Link href='https://www.khronos.org/openxr' /></ListItem>
+                <ListItem>3CityVR - jeżeli będzie zainteresowanie:</ListItem>
+                <ListItem>prezentacja WebXR</ListItem>
+                <ListItem>przedstawienie w szczegółach jak zbudowana jest Mapa Wikipedii</ListItem>
               </List>
+            </Slide>
+            <Slide>
+              <Heading size={2}>
+              Progressive WebXR
+              </Heading>
+              <Image fit src={images.mozillaStoreXR} width='70%' />
+              <Button href='https://blog.mozvr.com/progressive-webxr-ar-store/'>Przeczytaj więcej</Button>
+            </Slide>
+            <Slide>
+              <Heading size={2}>
+              OpenXR - before
+              </Heading>
+              <Magnifier src={images.openXRbefore} zoomFactor={0.5} width='50%' mgWidth={400} mgHeight={400} />
+              <Source><Link href='https://www.khronos.org/openxr' /></Source>
+            </Slide>
+            <Slide>
+              <Heading size={2}>
+              OpenXR - after
+              </Heading>
+              <Magnifier src={images.openXRafter} zoomFactor={0.5} width='50%' mgWidth={400} mgHeight={400} />
+              <Source><Link href='https://www.khronos.org/openxr' /></Source>
+            </Slide>
+            <Slide>
+              <Heading size={2}>
+              OpenXR - zaangażowane firmy
+              </Heading>
+              <Magnifier src={images.openXRcompanies} zoomFactor={0.5} width='50%' mgWidth={400} mgHeight={400} />
+              <Source><Link href='https://www.khronos.org/openxr' /></Source>
+              <br />
+              <Button href='https://www.khronos.org/openxr'>Przeczytaj więcej</Button>
             </Slide>
             <Slide>
               <Heading size={2}>
@@ -377,27 +428,24 @@ export default class Presentation extends React.Component {
               </Heading>
               <Flex>
                 <Flex2Columns>
-                  <Button href='https://developers.google.com/web/updates/2018/05/welcome-to-immersive'>Chcę stworzyć VR</Button>
+                  <Button href='https://experiments.withgoogle.com/collection/webvr'>Chcę przetestować VR</Button>
                   <List>
-                    <ListItem>ASD/</ListItem>
+                    <ListItem><Link href='https://webvr.info' /></ListItem>
                   </List>
                 </Flex2Columns>
                 <Flex2Columns>
-                  <Button href='https://experiments.withgoogle.com/collection/webvr'>Chcę przetestować VR</Button>
+                  <Button href='https://developers.google.com/web/updates/2018/05/welcome-to-immersive'>Chcę stworzyć VR</Button>
                   <List>
-                    <ListItem>ASD/</ListItem>
+                    <ListItem><Link href='https://aframe.io'>A-Frame</Link></ListItem>
+                    <ListItem><Link href='https://webvr.info' /></ListItem>
+                    <ListItem><Link href='https://webvr.rocks/' /></ListItem>
+                    <ListItem><Link href='https://www.youtube.com/watch?v=8BHOztuaj-4'>WebVR Create Portable VR Experiences on the Web</Link></ListItem>
                   </List>
                 </Flex2Columns>
               </Flex>
 
             </Slide>
-            <Slide>
-              <Heading size={2}>
-              Przykład Wideo WebXR
-              </Heading>
-              [wideo]
-            </Slide>
-            <Slide>
+            {/* <Slide>
               <Heading size={2}>
               Mapa Wikipedii
               </Heading>
@@ -405,7 +453,7 @@ export default class Presentation extends React.Component {
 [screenshot wielu otwartych zakładek]
 Link do mapy wikipedii (https://dawidjaniga/wikipedia-map)
 
-            </Slide>
+            </Slide> */}
             <Slide>
               <Heading size={2}>
               Odpowiedzmy razem
@@ -420,13 +468,13 @@ Link do mapy wikipedii (https://dawidjaniga/wikipedia-map)
               Pytania?
               </Heading>
             </Slide>
-            <Slide>
+            <Slide id='thank-you'>
               <Heading size={2}>
               Dziękuję i proszę o feedback
               </Heading>
-              <Button href='https://dawidjaniga/webvr-feedback'>Zostaw Feedback</Button>
-Link będzie też w poście na fejsie
-              <Button href='https://dawidjaniga/webvr-feedback'>Twitter // @dawidjaniga</Button>
+              <Button href='http://dawidjaniga.pl/webvr-feedback'>Zostaw Feedback</Button>
+              <Button href='https://twitter.com/dawidjaniga'><InlineImage src={images.twitter} height='2em' /> dawidjaniga</Button>
+              <Text margin='40px'>Link do prezentacji jest dostępny na stronie wydarzenia</Text>
             </Slide>
 
           </Deck>
