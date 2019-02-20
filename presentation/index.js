@@ -375,7 +375,7 @@ export default class Presentation extends React.Component {
               <Appear>
                 <div>
                   <List>
-                    <ListItem>Eksperymentalne stadium rozwoju</ListItem>
+                    <ListItem><Link href='https://immersive-web.github.io/webxr/'>Eksperymentalne stadium rozwoju</Link></ListItem>
                     <ListItem>Wydajność</ListItem>
                   </List>
                   <Button href='http://www.instavr.co/articles/general/why-native-vr-app-experiences-are-still-bertter-than-web-vr'>Przeczytaj więcej</Button>
@@ -425,7 +425,7 @@ export default class Presentation extends React.Component {
               <br />
               <Button href='https://www.khronos.org/openxr'>Przeczytaj więcej</Button>
             </Slide>
-            <Slide>
+            <Slide id='where-to-start'>
               <Heading size={2}>
               Zainspirowałeś mnie, gdzie zacząć?
               </Heading>
@@ -434,6 +434,9 @@ export default class Presentation extends React.Component {
                   <Button href='https://experiments.withgoogle.com/collection/webvr'>Chcę przetestować VR</Button>
                   <List>
                     <ListItem><Link href='https://webvr.info' /></ListItem>
+                    <ListItem><Link href='https://aframe.io/showcase/' /></ListItem>
+                    <ListItem><Link href='https://webvr.directory/' /></ListItem>
+                    <ListItem><Link href='https://mathworldvr.com' /><sup>HTC Vive</sup></ListItem>
                   </List>
                 </Flex2Columns>
                 <Flex2Columns>
