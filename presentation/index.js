@@ -368,7 +368,7 @@ export default class Presentation extends React.Component {
               </Heading>
               <iframe width='1080px' height='540px' frameborder='0' allowfullscreen='allowfullscreen' allowvr='' allow='vr; fullscreen; autoplay; accelerometer; gyroscope' src='https://player.with.in/?internal=true&amp;id=CXNVIMA&amp;autoplay=false' data-v-38b1ecb5='' />
             </Slide>
-            <Slide>
+            <Slide id='disadvantages'>
               <Heading size={2}>
               Wady ❌
               </Heading>
@@ -378,6 +378,7 @@ export default class Presentation extends React.Component {
                     <ListItem>Eksperymentalne stadium rozwoju</ListItem>
                     <ListItem>Wydajność</ListItem>
                   </List>
+                  <Button href='http://www.instavr.co/articles/general/why-native-vr-app-experiences-are-still-bertter-than-web-vr'>Przeczytaj więcej</Button>
                 </div>
               </Appear>
             </Slide>
@@ -397,7 +398,8 @@ export default class Presentation extends React.Component {
               <Heading size={2}>
               Progressive WebXR
               </Heading>
-              <Image fit src={images.mozillaStoreXR} width='70%' />
+              <Magnifier src={images.mozillaStoreXR} zoomFactor={0.5} width='60%' mgWidth={400} mgHeight={400} />
+              <br />
               <Button href='https://blog.mozvr.com/progressive-webxr-ar-store/'>Przeczytaj więcej</Button>
             </Slide>
             <Slide>
