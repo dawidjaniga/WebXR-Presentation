@@ -158,8 +158,9 @@ export default class Presentation extends React.Component {
               Cele prezentacji
               </Heading>
               <List>
+                <ListItem>Zapoznanie z technologią WebVR</ListItem>
                 <ListItem>Rozpowszechnienie Wirtualnej Rzeczywistości</ListItem>
-                <ListItem>Inspiracja do tworzenia projektów VR</ListItem>
+                <ListItem>Inspiracja do eksperymentów</ListItem>
               </List>
             </Slide>
             <Slide>
