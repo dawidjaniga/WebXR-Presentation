@@ -1,5 +1,4 @@
-# WebVR Presentation
-> 20.02.2019 Gdańsk
+# WebXR Presentation
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
@@ -9,8 +8,6 @@
 Presentation is built on React Spectacle.
 
 The Spectacle core API is available in the [Spectacle Docs](https://github.com/FormidableLabs/spectacle/blob/master/README.md).
-
-![](header.jpg)
 
 ## Contents
 
