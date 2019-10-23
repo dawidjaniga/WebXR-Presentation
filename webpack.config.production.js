@@ -11,7 +11,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/dist/"
+    publicPath: "dist/"
   },
 
   plugins: [
@@ -90,6 +90,6 @@ module.exports = {
   optimization: {
     minimize: true,
 
-    minimizer: [new UglifyJsPlugin()]
+    minimizer: []
   }
 };
