@@ -139,18 +139,18 @@ export default class Presentation extends React.Component {
             transitionDuration={300}
             progress='bar'
             theme={theme()}
-            contentWidth={1800}
-            contentHeight={1000}
+            contentWidth={1000}
+            contentHeight={700}
           >
             <Slide transition={['spin', 'zoom', 'slide', 'fade']}>
-              <Avatar src={images.meetupLogo} width='300px' />
+              <Avatar src={images.meetupLogo} width='20%' />
               <Heading size={1} prefix={false}>
                 WebVR
               </Heading>
               <Heading size={4} prefix={false}>
                 Wprowadzenie <Prefix>//</Prefix> Status <Prefix>//</Prefix> Przykłady
               </Heading>
-              <Avatar src={images.avatar} name='Dawid Janiga' width='200px' />
+              <Avatar src={images.avatar} name='Dawid Janiga' width='15%' />
               <sup>8976</sup>
             </Slide>
             <Slide>
@@ -252,7 +252,7 @@ export default class Presentation extends React.Component {
               <Heading size={2}>
               Intro
               </Heading>
-              <Video height='100%' src={videos.vrForEveryone} controls autoPlay={false} muted={false} subtitles={[{
+              <Video width='100%' src={videos.vrForEveryone} controls autoPlay={false} muted={false} subtitles={[{
                 label: 'Polski',
                 lang: 'pl',
                 isDefault: true,
@@ -273,7 +273,7 @@ export default class Presentation extends React.Component {
               <Heading size={2}>
               Współpraca niezależnie od urządzeń
               </Heading>
-              <Video height='100%' src={videos.easyCollaboration} controls autoPlay={false} muted={false} />
+              <Video width='100%' src={videos.easyCollaboration} controls autoPlay={false} muted={false} />
             </Slide>
             <Slide>
               <Heading size={2}>
@@ -341,7 +341,7 @@ export default class Presentation extends React.Component {
               <Heading size={2}>
               Gamepad API
               </Heading>
-              <Video height='100%' src={videos.gamepadApi} controls autoPlay={false} muted />
+              <Video width='100%' src={videos.gamepadApi} controls autoPlay={false} muted />
             </Slide>
             <Slide>
               <Heading size={2}>
@@ -366,7 +366,7 @@ export default class Presentation extends React.Component {
               <Heading size={2}>
               Pierwszy spacer człowieka w kosmosie
               </Heading>
-              <iframe width='1080px' height='540px' frameborder='0' allowfullscreen='allowfullscreen' allowvr='' allow='vr; fullscreen; autoplay; accelerometer; gyroscope' src='https://player.with.in/?internal=true&amp;id=CXNVIMA&amp;autoplay=false' data-v-38b1ecb5='' />
+              <iframe width='100%' height='500px' allowfullscreen='allowfullscreen' allowvr='' allow='vr; fullscreen; autoplay; accelerometer; gyroscope' src='https://player.with.in/?internal=true&amp;id=CXNVIMA&amp;autoplay=false' data-v-38b1ecb5='' />
             </Slide>
             <Slide id='disadvantages'>
               <Heading size={2}>
@@ -478,7 +478,7 @@ Link do mapy wikipedii (https://dawidjaniga/wikipedia-map)
               <Heading size={2}>
               Dziękuję i proszę o feedback
               </Heading>
-              <Button href='http://dawidjaniga.pl/webvr-feedback'>Zostaw Feedback</Button>
+              <Button href='https://docs.google.com/forms/d/e/1FAIpQLSdKTevQoGTGQCwSdcgMRphjtpDAqWPLArNtBh9iySjN-3ij4Q/viewform'>Zostaw Feedback</Button>
               <Button href='https://twitter.com/dawidjaniga'><InlineImage src={images.twitter} height='2em' /> dawidjaniga</Button>
               <Text margin='40px'>Link do prezentacji jest dostępny na stronie wydarzenia</Text>
             </Slide>

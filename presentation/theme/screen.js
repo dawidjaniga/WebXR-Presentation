@@ -55,7 +55,8 @@ const screen = (colorArgs = defaultColors, fontArgs = defaultFonts) => {
         padding: 0
       },
       html: {
-        background: '#000'
+        background: '#000',
+        fontSize: '14px'
       },
       '*': {
         boxSizing: 'border-box'

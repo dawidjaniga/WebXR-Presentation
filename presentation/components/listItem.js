@@ -6,7 +6,6 @@ const StyledList = styled.li`
   margin-bottom: 1em;
   line-height: 1.5em;
   text-align: left;
-  font-size: 1.5em;
   
   &::before {
     content: "0" counter(my-awesome-counter);
