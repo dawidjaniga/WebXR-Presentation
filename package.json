@@ -6,12 +6,14 @@
   "scripts": {
     "lint": "standard --fix",
     "start": "parcel index.html",
-    "build": "rm -r dist && parcel build index.html --out-dir dist"
+    "build": "rm -r dist && parcel build index.html --out-dir dist --no-source-maps"
   },
   "author": "Dawid Janiga <dawidjaniga@gmail.com> (https://dawidjaniga.pl)",
   "license": "UNLICENSED",
   "dependencies": {
     "arwes": "1.0.0-alpha.5",
+    "assets": "^3.0.1",
+    "http-server": "^0.11.1",
     "normalize.css": "8.0.0",
     "parcel": "1.12.4",
     "prop-types": "^15.6.2",
